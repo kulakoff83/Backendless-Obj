@@ -7,25 +7,43 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5D5D50211E390AEB00EC895B /* DKProductListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D5D50201E390AEB00EC895B /* DKProductListViewController.m */; };
+		5D5D50241E390B2A00EC895B /* DKProductDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D5D50231E390B2A00EC895B /* DKProductDetailsViewController.m */; };
+		5D5D50281E390B5B00EC895B /* DKProductTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D5D50261E390B5B00EC895B /* DKProductTableViewCell.m */; };
+		5D5D50291E390B5B00EC895B /* DKProductTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D5D50271E390B5B00EC895B /* DKProductTableViewCell.xib */; };
+		5D5D502F1E390BC000EC895B /* DKAPIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D5D502E1E390BC000EC895B /* DKAPIManager.m */; };
+		5D5D50321E390C8100EC895B /* DKProduct.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D5D50311E390C8100EC895B /* DKProduct.m */; };
 		5DE0D1891E39016D009768EE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DE0D1881E39016D009768EE /* main.m */; };
 		5DE0D18C1E39016D009768EE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DE0D18B1E39016D009768EE /* AppDelegate.m */; };
-		5DE0D18F1E39016D009768EE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DE0D18E1E39016D009768EE /* ViewController.m */; };
 		5DE0D1921E39016D009768EE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DE0D1901E39016D009768EE /* Main.storyboard */; };
 		5DE0D1941E39016D009768EE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5DE0D1931E39016D009768EE /* Assets.xcassets */; };
 		5DE0D1971E39016D009768EE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DE0D1951E39016D009768EE /* LaunchScreen.storyboard */; };
+		F947B0CCFC750DCD53E4ABB8 /* Pods_Beckendles_Obj.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56F7DD39EE69A1521558E5D0 /* Pods_Beckendles_Obj.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2FA694918F0DB64BE7010500 /* Pods-Beckendles-Obj.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Beckendles-Obj.release.xcconfig"; path = "Pods/Target Support Files/Pods-Beckendles-Obj/Pods-Beckendles-Obj.release.xcconfig"; sourceTree = "<group>"; };
+		56F7DD39EE69A1521558E5D0 /* Pods_Beckendles_Obj.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Beckendles_Obj.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5D5D501F1E390AEB00EC895B /* DKProductListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKProductListViewController.h; sourceTree = "<group>"; };
+		5D5D50201E390AEB00EC895B /* DKProductListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKProductListViewController.m; sourceTree = "<group>"; };
+		5D5D50221E390B2A00EC895B /* DKProductDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKProductDetailsViewController.h; sourceTree = "<group>"; };
+		5D5D50231E390B2A00EC895B /* DKProductDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKProductDetailsViewController.m; sourceTree = "<group>"; };
+		5D5D50251E390B5B00EC895B /* DKProductTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKProductTableViewCell.h; sourceTree = "<group>"; };
+		5D5D50261E390B5B00EC895B /* DKProductTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKProductTableViewCell.m; sourceTree = "<group>"; };
+		5D5D50271E390B5B00EC895B /* DKProductTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DKProductTableViewCell.xib; sourceTree = "<group>"; };
+		5D5D502D1E390BC000EC895B /* DKAPIManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKAPIManager.h; sourceTree = "<group>"; };
+		5D5D502E1E390BC000EC895B /* DKAPIManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKAPIManager.m; sourceTree = "<group>"; };
+		5D5D50301E390C8100EC895B /* DKProduct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKProduct.h; sourceTree = "<group>"; };
+		5D5D50311E390C8100EC895B /* DKProduct.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKProduct.m; sourceTree = "<group>"; };
 		5DE0D1841E39016D009768EE /* Beckendles-Obj.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Beckendles-Obj.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DE0D1881E39016D009768EE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5DE0D18A1E39016D009768EE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5DE0D18B1E39016D009768EE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		5DE0D18D1E39016D009768EE /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		5DE0D18E1E39016D009768EE /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		5DE0D1911E39016D009768EE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5DE0D1931E39016D009768EE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5DE0D1961E39016D009768EE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5DE0D1981E39016D009768EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7288C1F1781726CE8B6EA5A6 /* Pods-Beckendles-Obj.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Beckendles-Obj.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Beckendles-Obj/Pods-Beckendles-Obj.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +51,76 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F947B0CCFC750DCD53E4ABB8 /* Pods_Beckendles_Obj.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2527FD8511C6CFAFE9A5D264 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				56F7DD39EE69A1521558E5D0 /* Pods_Beckendles_Obj.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4045ACD41F4A6B9D508A93D3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7288C1F1781726CE8B6EA5A6 /* Pods-Beckendles-Obj.debug.xcconfig */,
+				2FA694918F0DB64BE7010500 /* Pods-Beckendles-Obj.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		5D5D501B1E390A3F00EC895B /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				5D5D502D1E390BC000EC895B /* DKAPIManager.h */,
+				5D5D502E1E390BC000EC895B /* DKAPIManager.m */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
+		5D5D501C1E390A4C00EC895B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5D5D50301E390C8100EC895B /* DKProduct.h */,
+				5D5D50311E390C8100EC895B /* DKProduct.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		5D5D501D1E390A5400EC895B /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				5D5D501F1E390AEB00EC895B /* DKProductListViewController.h */,
+				5D5D50201E390AEB00EC895B /* DKProductListViewController.m */,
+				5D5D50221E390B2A00EC895B /* DKProductDetailsViewController.h */,
+				5D5D50231E390B2A00EC895B /* DKProductDetailsViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		5D5D501E1E390A6200EC895B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5D5D50251E390B5B00EC895B /* DKProductTableViewCell.h */,
+				5D5D50261E390B5B00EC895B /* DKProductTableViewCell.m */,
+				5D5D50271E390B5B00EC895B /* DKProductTableViewCell.xib */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		5DE0D17B1E39016D009768EE = {
 			isa = PBXGroup;
 			children = (
 				5DE0D1861E39016D009768EE /* Beckendles-Obj */,
 				5DE0D1851E39016D009768EE /* Products */,
+				4045ACD41F4A6B9D508A93D3 /* Pods */,
+				2527FD8511C6CFAFE9A5D264 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,8 +137,10 @@
 			children = (
 				5DE0D18A1E39016D009768EE /* AppDelegate.h */,
 				5DE0D18B1E39016D009768EE /* AppDelegate.m */,
-				5DE0D18D1E39016D009768EE /* ViewController.h */,
-				5DE0D18E1E39016D009768EE /* ViewController.m */,
+				5D5D501E1E390A6200EC895B /* Views */,
+				5D5D501D1E390A5400EC895B /* Controllers */,
+				5D5D501C1E390A4C00EC895B /* Model */,
+				5D5D501B1E390A3F00EC895B /* Services */,
 				5DE0D1901E39016D009768EE /* Main.storyboard */,
 				5DE0D1931E39016D009768EE /* Assets.xcassets */,
 				5DE0D1951E39016D009768EE /* LaunchScreen.storyboard */,
@@ -86,9 +165,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5DE0D19B1E39016D009768EE /* Build configuration list for PBXNativeTarget "Beckendles-Obj" */;
 			buildPhases = (
+				FC0C9AD3683A33D361A66BED /* [CP] Check Pods Manifest.lock */,
 				5DE0D1801E39016D009768EE /* Sources */,
 				5DE0D1811E39016D009768EE /* Frameworks */,
 				5DE0D1821E39016D009768EE /* Resources */,
+				DCFFFB2F77F0A31065F1E9A5 /* [CP] Embed Pods Frameworks */,
+				08A871943494D57A678BFFA9 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -140,20 +222,73 @@
 			files = (
 				5DE0D1971E39016D009768EE /* LaunchScreen.storyboard in Resources */,
 				5DE0D1941E39016D009768EE /* Assets.xcassets in Resources */,
+				5D5D50291E390B5B00EC895B /* DKProductTableViewCell.xib in Resources */,
 				5DE0D1921E39016D009768EE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		08A871943494D57A678BFFA9 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Beckendles-Obj/Pods-Beckendles-Obj-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DCFFFB2F77F0A31065F1E9A5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Beckendles-Obj/Pods-Beckendles-Obj-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FC0C9AD3683A33D361A66BED /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		5DE0D1801E39016D009768EE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5DE0D18F1E39016D009768EE /* ViewController.m in Sources */,
+				5D5D50241E390B2A00EC895B /* DKProductDetailsViewController.m in Sources */,
 				5DE0D18C1E39016D009768EE /* AppDelegate.m in Sources */,
+				5D5D50281E390B5B00EC895B /* DKProductTableViewCell.m in Sources */,
+				5D5D502F1E390BC000EC895B /* DKAPIManager.m in Sources */,
 				5DE0D1891E39016D009768EE /* main.m in Sources */,
+				5D5D50321E390C8100EC895B /* DKProduct.m in Sources */,
+				5D5D50211E390AEB00EC895B /* DKProductListViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,7 +406,9 @@
 		};
 		5DE0D19C1E39016D009768EE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7288C1F1781726CE8B6EA5A6 /* Pods-Beckendles-Obj.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = XESDW7394F;
 				INFOPLIST_FILE = "Beckendles-Obj/Info.plist";
@@ -283,7 +420,9 @@
 		};
 		5DE0D19D1E39016D009768EE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2FA694918F0DB64BE7010500 /* Pods-Beckendles-Obj.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = XESDW7394F;
 				INFOPLIST_FILE = "Beckendles-Obj/Info.plist";
@@ -312,6 +451,7 @@
 				5DE0D19D1E39016D009768EE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

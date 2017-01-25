@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  DKProductListViewController.h
 //  Beckendles-Obj
 //
 //  Created by Dmitry Kulakov on 25.01.17.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface DKProductListViewController : UIViewController
 
 @end
-

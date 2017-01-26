@@ -1,0 +1,6 @@
+framework module Pods_Beckendles_Obj {
+  umbrella header "Pods-Beckendles-Obj-umbrella.h"
+
+  export *
+  module * { export * }
+}

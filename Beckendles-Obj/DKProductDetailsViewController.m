@@ -33,9 +33,9 @@
 #pragma mark - Navigation
 
 - (void)configureElements {
-    self.productNameLabel.text = self.product.name;
+    self.productNameLabel.text = self.product.productName;
     self.productPriceLabel.text = [NSString stringWithFormat:@"%.2f",self.product.price.floatValue];
-    self.productImageView.image = [UIImage imageWithData:self.product.imageData];
+    self.productImageView.image = self.product.image;
     self.productDescriptionTextView.text = self.product.productDescription;
 }
 

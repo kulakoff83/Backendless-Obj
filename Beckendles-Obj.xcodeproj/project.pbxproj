@@ -11,8 +11,7 @@
 		5D5D50241E390B2A00EC895B /* DKProductDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D5D50231E390B2A00EC895B /* DKProductDetailsViewController.m */; };
 		5D5D50281E390B5B00EC895B /* DKProductTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D5D50261E390B5B00EC895B /* DKProductTableViewCell.m */; };
 		5D5D50291E390B5B00EC895B /* DKProductTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D5D50271E390B5B00EC895B /* DKProductTableViewCell.xib */; };
-		5D5D502F1E390BC000EC895B /* DKAPIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D5D502E1E390BC000EC895B /* DKAPIManager.m */; };
-		5D5D50321E390C8100EC895B /* DKProduct.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D5D50311E390C8100EC895B /* DKProduct.m */; };
+		5D5D50321E390C8100EC895B /* Product.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D5D50311E390C8100EC895B /* Product.m */; };
 		5DE0D1891E39016D009768EE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DE0D1881E39016D009768EE /* main.m */; };
 		5DE0D18C1E39016D009768EE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DE0D18B1E39016D009768EE /* AppDelegate.m */; };
 		5DE0D1921E39016D009768EE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DE0D1901E39016D009768EE /* Main.storyboard */; };
@@ -31,10 +30,8 @@
 		5D5D50251E390B5B00EC895B /* DKProductTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKProductTableViewCell.h; sourceTree = "<group>"; };
 		5D5D50261E390B5B00EC895B /* DKProductTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKProductTableViewCell.m; sourceTree = "<group>"; };
 		5D5D50271E390B5B00EC895B /* DKProductTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DKProductTableViewCell.xib; sourceTree = "<group>"; };
-		5D5D502D1E390BC000EC895B /* DKAPIManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKAPIManager.h; sourceTree = "<group>"; };
-		5D5D502E1E390BC000EC895B /* DKAPIManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKAPIManager.m; sourceTree = "<group>"; };
-		5D5D50301E390C8100EC895B /* DKProduct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKProduct.h; sourceTree = "<group>"; };
-		5D5D50311E390C8100EC895B /* DKProduct.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKProduct.m; sourceTree = "<group>"; };
+		5D5D50301E390C8100EC895B /* Product.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Product.h; sourceTree = "<group>"; };
+		5D5D50311E390C8100EC895B /* Product.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Product.m; sourceTree = "<group>"; };
 		5DE0D1841E39016D009768EE /* Beckendles-Obj.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Beckendles-Obj.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DE0D1881E39016D009768EE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5DE0D18A1E39016D009768EE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -75,20 +72,11 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		5D5D501B1E390A3F00EC895B /* Services */ = {
-			isa = PBXGroup;
-			children = (
-				5D5D502D1E390BC000EC895B /* DKAPIManager.h */,
-				5D5D502E1E390BC000EC895B /* DKAPIManager.m */,
-			);
-			name = Services;
-			sourceTree = "<group>";
-		};
 		5D5D501C1E390A4C00EC895B /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				5D5D50301E390C8100EC895B /* DKProduct.h */,
-				5D5D50311E390C8100EC895B /* DKProduct.m */,
+				5D5D50301E390C8100EC895B /* Product.h */,
+				5D5D50311E390C8100EC895B /* Product.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -140,7 +128,6 @@
 				5D5D501E1E390A6200EC895B /* Views */,
 				5D5D501D1E390A5400EC895B /* Controllers */,
 				5D5D501C1E390A4C00EC895B /* Model */,
-				5D5D501B1E390A3F00EC895B /* Services */,
 				5DE0D1901E39016D009768EE /* Main.storyboard */,
 				5DE0D1931E39016D009768EE /* Assets.xcassets */,
 				5DE0D1951E39016D009768EE /* LaunchScreen.storyboard */,
@@ -284,9 +271,8 @@
 				5D5D50241E390B2A00EC895B /* DKProductDetailsViewController.m in Sources */,
 				5DE0D18C1E39016D009768EE /* AppDelegate.m in Sources */,
 				5D5D50281E390B5B00EC895B /* DKProductTableViewCell.m in Sources */,
-				5D5D502F1E390BC000EC895B /* DKAPIManager.m in Sources */,
 				5DE0D1891E39016D009768EE /* main.m in Sources */,
-				5D5D50321E390C8100EC895B /* DKProduct.m in Sources */,
+				5D5D50321E390C8100EC895B /* Product.m in Sources */,
 				5D5D50211E390AEB00EC895B /* DKProductListViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -412,7 +398,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "Beckendles-Obj/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kulakoff.Beckendles-Obj";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -428,7 +414,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "Beckendles-Obj/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kulakoff.Beckendles-Obj";
 				PRODUCT_NAME = "$(TARGET_NAME)";

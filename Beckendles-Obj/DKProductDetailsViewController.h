@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "DKProduct.h"
+#import "Product.h"
 
 @interface DKProductDetailsViewController : UIViewController
 
-@property(nonatomic,strong) DKProduct *product;
+@property(nonatomic,strong) Product *product;
 
 @end

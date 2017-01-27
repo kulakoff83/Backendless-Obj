@@ -7,22 +7,22 @@
 //
 
 #import "DKProductListViewController.h"
-#import "DKAPIManager.h"
 #import "DKProductTableViewCell.h"
-#import "DKProduct.h"
+#import "Product.h"
 #import "DKProductDetailsViewController.h"
-@import Realm;
+#import <Backendless.h>
+#import "AppDelegate.h"
 
 static NSString *ProductsCellIdentifier = @"ProductCell";
 static NSString *ProductsDetailsSegueIdentifier = @"ProductDetailsSegue";
+static NSInteger pageSize = 10;
 
 @interface DKProductListViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property(nonatomic,strong) NSString *nextPageURL;
-@property (strong,nonatomic) RLMResults *products;
-@property (strong, nonatomic) RLMNotificationToken *notificationToken;
+@property (strong,nonatomic) NSMutableArray *products;
 @property (nonatomic,getter=isLoad) BOOL load;
+@property (strong,nonatomic) BackendlessCollection *productBackendlessCollection;
 
 @end
 
@@ -33,7 +33,6 @@ static NSString *ProductsDetailsSegueIdentifier = @"ProductDetailsSegue";
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [self configureRealmNotification];
     [self requestProducts];
 }
 
@@ -50,56 +49,34 @@ static NSString *ProductsDetailsSegueIdentifier = @"ProductDetailsSegue";
     }
 }
 
-- (void)dealloc {
-    [self.notificationToken stop];
-}
-
 #pragma mark - Request
 
 - (void)requestProducts {
     __weak typeof(self) weakSelf = self;
-    [[DKAPIManager sharedInstance] sendProductsRequest:self.nextPageURL succesBlock:^(NSString *nextURL) {
-        weakSelf.nextPageURL = nextURL;
-    } errorBlock:^(NSError * error) {
-        NSLog(@"%@",error);
+    BackendlessDataQuery *query = [BackendlessDataQuery query];
+    query.queryOptions.pageSize = [NSNumber numberWithInt:(unsigned)pageSize];
+    [backendless.persistenceService find:[Product class] dataQuery:query response:^(BackendlessCollection * objectBackendlessCollection) {
+        weakSelf.productBackendlessCollection = objectBackendlessCollection;
+        weakSelf.products = [[NSMutableArray alloc] initWithArray:[objectBackendlessCollection getCurrentPage]];
+        weakSelf.tableView.tableFooterView.hidden = NO;
+        [weakSelf.tableView reloadData];
+    } error:^(Fault * fault) {
+        NSLog(@"%@", fault);
     }];
 }
-
-#pragma mark - Realm Notification Token
-
-- (void)configureRealmNotification {
-    self.products = [DKProduct allObjects];
-    RLMRealm *realm = [RLMRealm defaultRealm];
-    [realm beginWriteTransaction];
-    [realm deleteObjects:self.products];
-    [realm commitWriteTransaction];
+     
+- (void)requestNextProducts {
     __weak typeof(self) weakSelf = self;
-    self.notificationToken = [self.products addNotificationBlock:^(RLMResults<DKProduct *> *results, RLMCollectionChange *changes, NSError *error) {
-        if (error) {
-            NSLog(@"Failed to open Realm on background worker: %@", error);
-            return;
+    [self.productBackendlessCollection nextPageAsync:^(BackendlessCollection * objectBackendlessCollection) {
+        weakSelf.productBackendlessCollection = objectBackendlessCollection;
+        [weakSelf.products addObjectsFromArray:[objectBackendlessCollection getCurrentPage]];
+        [weakSelf.tableView reloadData];
+        if (weakSelf.productBackendlessCollection.totalObjects.intValue <= weakSelf.products.count) {
+            weakSelf.tableView.tableFooterView.hidden = YES;
+            weakSelf.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
         }
-        UITableView *tableView = weakSelf.tableView;
-        // Initial run of the query will pass nil for the change information
-        if (!changes) {
-            [tableView reloadData];
-            return;
-        }
-        // Query results have changed, so apply them to the UITableView
-        [tableView beginUpdates];
-        [tableView deleteRowsAtIndexPaths:[changes deletionsInSection:0]
-                         withRowAnimation:UITableViewRowAnimationAutomatic];
-        [tableView insertRowsAtIndexPaths:[changes insertionsInSection:0]
-                         withRowAnimation:UITableViewRowAnimationAutomatic];
-        [tableView reloadRowsAtIndexPaths:[changes modificationsInSection:0]
-                         withRowAnimation:UITableViewRowAnimationAutomatic];
-        [tableView endUpdates];
-        if (![weakSelf.nextPageURL isKindOfClass:[NSNull class]]) {
-            tableView.tableFooterView.hidden = NO;
-        } else {
-            tableView.tableFooterView.hidden = YES;
-            tableView.tableFooterView = [[UIView alloc]initWithFrame:CGRectZero];
-        }
+    } error:^(Fault * fault) {
+        NSLog(@"%@", fault);
     }];
 }
 
@@ -107,7 +84,7 @@ static NSString *ProductsDetailsSegueIdentifier = @"ProductDetailsSegue";
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     DKProductTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ProductsCellIdentifier forIndexPath:indexPath];
-    DKProduct *product = self.products[indexPath.row];
+    Product *product = self.products[indexPath.row];
     [cell configureWith:product];
     return cell;
 }
@@ -119,13 +96,9 @@ static NSString *ProductsDetailsSegueIdentifier = @"ProductDetailsSegue";
 #pragma mark - TableViewDelegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    DKProduct *product = self.products[indexPath.row];
+    Product *product = self.products[indexPath.row];
     DKProductTableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-    RLMRealm *realm = [RLMRealm defaultRealm];
-    [realm beginWriteTransaction];
-    NSData *data = UIImageJPEGRepresentation(cell.image, 1.0);
-    product.imageData = data;
-    [realm commitWriteTransaction];
+    product.image = cell.image;
     [self performSegueWithIdentifier:ProductsDetailsSegueIdentifier sender:product];
 }
 
@@ -159,7 +132,7 @@ static NSString *ProductsDetailsSegueIdentifier = @"ProductDetailsSegue";
 #pragma mark - Actions
 
 - (void)loadMoreButtonPressed {
-    [self requestProducts];
+    [self requestNextProducts];
 }
 
 
@@ -168,7 +141,7 @@ static NSString *ProductsDetailsSegueIdentifier = @"ProductDetailsSegue";
  - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
      if ([segue.identifier isEqualToString:ProductsDetailsSegueIdentifier]) {
          DKProductDetailsViewController *productDetailsVC = segue.destinationViewController;
-         productDetailsVC.product = (DKProduct*)sender;
+         productDetailsVC.product = (Product*)sender;
      }
  }
 

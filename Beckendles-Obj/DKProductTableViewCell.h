@@ -7,11 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "DKProduct.h"
+#import "Product.h"
 
 @interface DKProductTableViewCell : UITableViewCell
 
 @property(nonatomic,strong) UIImage *image;
-- (void)configureWith:(DKProduct *)product;
+- (void)configureWith:(Product *)product;
 
 @end

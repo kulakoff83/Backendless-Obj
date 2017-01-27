@@ -37,8 +37,8 @@
     self.productImageView.image = nil;
 }
 
-- (void)configureWith:(DKProduct *)product {
-    self.productNameLabel.text = product.name;
+- (void)configureWith:(Product *)product {
+    self.productNameLabel.text = product.productName;
     self.productDescriptionLabel.text = product.productDescription;
     NSURL *url = [NSURL URLWithString:product.imageURL];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];

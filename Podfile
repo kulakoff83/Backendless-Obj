@@ -6,6 +6,5 @@ target 'Beckendles-Obj' do
 
   pod 'Backendless'
   pod 'AFNetworking', '~> 3.0'
-  pod 'Realm'
 
 end
